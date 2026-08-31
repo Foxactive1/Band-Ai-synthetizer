@@ -5,7 +5,7 @@
  */
 
 const ALLOWED_ORIGINS = [
-  "https://ai-band-synthetizer.vercel.app"
+  "https://ai-band-synthetizer-innova.vercel.app"
 ];
 
 const INSTRUMENTS = ["piano", "bass", "drums", "sitar", "synth"];
