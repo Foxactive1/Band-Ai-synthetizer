@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandmate AI Pro - Estúdio Musical Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1><i class="fas fa-music"></i> Bandmate AI <span class="badge">PRO</span></h1>
+            <p>Crie músicas harmoniosas instantaneamente com IA e síntese avançada</p>
+        </header>
+
+        <!-- Visualizador de Áudio -->
+        <div class="visualizer-container">
+            <canvas id="audio-visualizer"></canvas>
+            <div class="visualizer-overlay">
+                <span id="status-text">Pronto para tocar</span>
+            </div>
+        </div>
+
+        <!-- Controles Principais -->
+        <div class="main-controls">
+            <div class="control-group">
+                <label>Tempo: <span id="tempo-display">120</span> BPM</label>
+                <input type="range" id="tempo-slider" min="60" max="180" value="120">
+            </div>
+            
+            <div class="control-group">
+                <label>Tonalidade</label>
+                <select id="key-select">
+                    <option value="C Major">Dó Maior (C)</option>
+                    <option value="G Major">Sol Maior (G)</option>
+                    <option value="D Minor">Ré Menor (Dm)</option>
+                    <option value="A Minor">Lá Menor (Am)</option>
+                    <option value="Raga Yaman">Raga Yaman</option>
+                    <option value="Pentatonic">Pentatônica</option>
+                </select>
+            </div>
+
+            <div class="action-buttons">
+                <button id="play-btn" class="btn-primary"><i class="fas fa-play"></i> Tocar</button>
+                <button id="stop-btn" class="btn-secondary"><i class="fas fa-stop"></i> Parar</button>
+                <button id="record-btn" class="btn-record"><i class="fas fa-circle"></i> Gravar</button>
+            </div>
+        </div>
+
+        <!-- Presets Rápidos -->
+        <div class="presets-section">
+            <h3>Estilos Rápidos</h3>
+            <div class="preset-buttons">
+                <button data-preset="lofi">🎧 Lo-Fi Chill</button>
+                <button data-preset="rock">🎸 Rock Clássico</button>
+                <button data-preset="meditation">🕉️ Meditação</button>
+                <button data-preset="synthwave">🌃 Synthwave</button>
+            </div>
+        </div>
+
+        <!-- Input de Prompt / IA -->
+        <div class="ai-section">
+            <textarea id="prompt-input" placeholder="Descreva sua música... ex: 'Uma batida lenta de jazz com piano suave'"></textarea>
+            <div class="ai-controls">
+                <input type="password" id="groq-key" placeholder="Chave API Groq (Opcional)">
+                <button id="generate-ai-btn"><i class="fas fa-magic"></i> Gerar com IA</button>
+            </div>
+        </div>
+
+        <!-- Lista de Instrumentos -->
+        <div id="instruments-list" class="instruments-grid">
+            <!-- Instrumentos serão adicionados aqui dinamicamente -->
+            <div class="empty-state">
+                <i class="fas fa-sliders-h"></i>
+                <p>Nenhum instrumento ativo. Adicione abaixo ou use a IA.</p>
+            </div>
+        </div>
+
+        <!-- Adicionar Instrumentos Manualmente -->
+        <div class="add-instruments">
+            <h3>Adicionar Instrumentos</h3>
+            <div class="instrument-buttons">
+                <button data-inst="piano"><i class="fas fa-piano"></i> Piano</button>
+                <button data-inst="bass"><i class="fas fa-guitar"></i> Baixo</button>
+                <button data-inst="drums"><i class="fas fa-drum"></i> Bateria</button>
+                <button data-inst="sitar"><i class="fas fa-music"></i> Sitar</button>
+                <button data-inst="synth"><i class="fas fa-wave-square"></i> Synth</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
