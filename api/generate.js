@@ -5,7 +5,7 @@
  */
 
 const ALLOWED_ORIGINS = [
-    "https://ai-band-synthetizer-innova.vercel.app",
+    "https://band-ai-synthetizer-uo13.vercel.app/",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:5173",
